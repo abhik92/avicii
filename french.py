@@ -1,8 +1,11 @@
 from nadal import Slam
 from datetime import datetime, timedelta
+from hawkeye import VideoReplay
 
 match_score = open("points.txt",'r')
-score_board = open("scoresheet.txt",'w')
+
+OUTPUT = "scoresheet.txt"
+score_board = open(OUTPUT,'w')
 
 MAX_DAYS = 200
 end = datetime.now()
@@ -21,8 +24,12 @@ for points in match_score:
     set_one = set_summary.serve(MAX_DAYS)
     set_two = set_summary.serve(int(MAX_DAYS/2))
     set_three = set_summary.serve(int(MAX_DAYS/4))
-    bounce = "The current price is {}".format(set_summary.lob(end.strftime("%Y-%m-%d"))) + '\n'
+    bounce = "The current price of {} is {}".format(tournament, set_summary.lob(end.strftime("%Y-%m-%d"))) + '\n'
     rolling = "The 200, 100, 50 day rolling averages are {},{},{}".format(set_one, set_two, set_three) + '\n'
     history = "You bought this {} time units ago".format(sell) + '\n'
 
-    print(bounce, rolling, history)
+    score_board.write(bounce + rolling + history + '\n')
+
+score_board.close()
+
+video = VideoReplay("abhik.mondal1992@gmail.com", OUTPUT)

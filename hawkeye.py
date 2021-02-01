@@ -17,6 +17,8 @@ class VideoReplay:
         msg['From'] = self.email
         msg['To'] = self.email
 
+
+        # TODO connect to the gmail server
         s = smtplib.SMTP('localhost')
         s.send_message(msg)
         s.quit()

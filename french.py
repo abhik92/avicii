@@ -1,6 +1,7 @@
 from nadal import Slam
 from datetime import datetime, timedelta
 from hawkeye import VideoReplay
+from os import system
 
 match_score = open("points.txt",'r')
 
@@ -10,6 +11,8 @@ score_board = open(OUTPUT,'w')
 MAX_DAYS = 200
 end = datetime.now()
 start = end - timedelta(days=MAX_DAYS*7/5 + 50)
+
+score = ""
 
 for points in match_score:
     game = points.split()
@@ -28,8 +31,9 @@ for points in match_score:
     rolling = "The 200, 100, 50 day rolling averages are {},{},{}".format(set_one, set_two, set_three) + '\n'
     history = "You bought this {} time units ago".format(sell) + '\n'
 
+    score += bounce+rolling+history+'\n'
     score_board.write(bounce + rolling + history + '\n')
 
 score_board.close()
 
-video = VideoReplay("abhik.mondal1992@gmail.com", OUTPUT)
+system("osascript -e 'display notification \" " + score + "\"\'")

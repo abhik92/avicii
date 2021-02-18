@@ -8,6 +8,6 @@ Use the example 'points.txt' file format to add your portfolio purchases and dat
 
 ### How to run
 ```
-python3 nadal.py
+python3 french.py
 ```
 

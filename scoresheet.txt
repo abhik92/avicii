@@ -1,8 +1,8 @@
-The current price of NFLX is 532.3900146484375
-The 200, 100, 50 day rolling averages are 486.47800018310545,507.1146994018555,514.7186010742188
-You bought this 26 days, 23:16:53.665667 time units ago
+Todays PRICE of NFLX : $551.34
+The 200, 100, 50 day AVG : $494.2, $515.19 and $529.83
+You bought this 44 days, 0:44:21.628826 time units ago
 
-The current price of MSFT is 231.9600067138672
-The 200, 100, 50 day rolling averages are 206.12989990234374,214.73569946289064,218.56419921875
-You bought this 542 days, 23:16:53.665667 time units ago
+Todays PRICE of MSFT : $244.2
+The 200, 100, 50 day AVG : $210.23, $219.3 and $225.59
+You bought this 560 days, 0:44:21.628826 time units ago
 

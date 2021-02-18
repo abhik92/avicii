@@ -24,16 +24,16 @@ for points in match_score:
     if debut < start_first:
         start_first = debut
     set_summary = Slam(tournament, 'yahoo', start_first.strftime("%Y-%m-%d"), end.strftime("%Y-%m-%d"))
-    set_one = set_summary.serve(MAX_DAYS)
-    set_two = set_summary.serve(int(MAX_DAYS/2))
-    set_three = set_summary.serve(int(MAX_DAYS/4))
-    bounce = "The current price of {} is {}".format(tournament, set_summary.lob(end.strftime("%Y-%m-%d"))) + '\n'
-    rolling = "The 200, 100, 50 day rolling averages are {},{},{}".format(set_one, set_two, set_three) + '\n'
+    set_one = round(set_summary.serve(MAX_DAYS),2)
+    set_two = round(set_summary.serve(int(MAX_DAYS/2)),2)
+    set_three = round(set_summary.serve(int(MAX_DAYS/4)),2)
+    bounce = "Todays PRICE of {} : ${}".format(tournament, round(set_summary.lob(end.strftime("%Y-%m-%d")),2)) + '\n'
+    rolling = "The 200, 100, 50 day AVG : ${}, ${} and ${}".format(set_one, set_two, set_three) + '\n'
     history = "You bought this {} time units ago".format(sell) + '\n'
 
-    score += bounce+rolling+history+'\n'
+    score = bounce+rolling+history+'\n'
     score_board.write(bounce + rolling + history + '\n')
+    system("osascript -e 'display notification \" " + score + "\"\'")
 
 score_board.close()
 
-system("osascript -e 'display notification \" " + score + "\"\'")

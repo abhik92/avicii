@@ -11,3 +11,6 @@ Use the example 'points.txt' file format to add your portfolio purchases and dat
 python3 french.py
 ```
 
+### How it looks
+
+![looks](test.jpg)

@@ -1,4 +1,4 @@
-#Wake up with some Portfolio news!
+# Wake up with some Portfolio news!
 
 Generates a Macbook notification with portfolio statistics as requested!
 
